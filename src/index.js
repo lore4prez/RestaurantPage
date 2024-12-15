@@ -1,8 +1,8 @@
 import "./styles.css";
-import {addContentHeader, addDescrip, addOpenHours, addLocation} from "./home.js";
+import {addHomeHeader, addDescrip, addOpenHours, addLocation} from "./home.js";
 
 // default, home page will be shown
-addContentHeader();
+addHomeHeader();
 addDescrip();
 addOpenHours();
 addLocation();
@@ -13,7 +13,7 @@ const content = document.querySelector("#content");
 
 function goToHome() {
     content.innerHTML = "";
-    addContentHeader();
+    addHomeHeader();
     addDescrip();
     addOpenHours();
     addLocation();

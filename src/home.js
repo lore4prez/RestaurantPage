@@ -1,6 +1,6 @@
 const content = document.querySelector("#content");
 
-function addContentHeader() {
+function addHomeHeader() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h1");
 
@@ -62,4 +62,4 @@ function addLocation() {
 
 
 
-export {addContentHeader, addDescrip, addOpenHours, addLocation};
+export {addHomeHeader, addDescrip, addOpenHours, addLocation};
