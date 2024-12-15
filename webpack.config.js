@@ -1,33 +1,3 @@
-# RestaurantPage
-
-Quick setup:
-npm init -y
-npm install --save-dev webpack webpack-cli
-mkdir src && touch src/index.js src/another.js
-touch webpack.config.js
-
-npm install --save-dev html-webpack-plugin
-touch src/template.html
-npm install --save-dev style-loader css-loader
-touch src/styles.css
-npm install --save-dev html-loader
-npm install --save-dev webpack-dev-server
-
-To host, 
-npx webpack serve
-
-Open it on 
-http://localhost:8080/
-
-
-
-
-
-
-
-
-
-
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
