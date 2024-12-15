@@ -4,6 +4,7 @@ function addMenuHeader() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h1");
 
+    contentDiv.classList.add("header");
     contentHeader.textContent = "Menu";
     contentDiv.appendChild(contentHeader);
     content.appendChild(contentDiv);
@@ -12,7 +13,10 @@ function addMenuHeader() {
 function addBreakfastMenu() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h3");
+
+    contentDiv.classList.add("menucontent1");
     contentHeader.textContent = "Breakfast Menu";
+    contentHeader.classList.add("miniheader");
     contentDiv.appendChild(contentHeader); 
 
     const foodNameList = ["Sukuna's Cursed Pancakes", "Megumi's Shikigami Waflles", "Gojo's Infinity Omelette"];
@@ -30,7 +34,6 @@ function addBreakfastMenu() {
         `A perfect balance of sweetness and nutrition. Megumi waffles bring forth the power of his shikigami`,
         `Boundless and perfect. Gojo's Infinity Omelette is a meal that transcends all limitations`
     ]
-
     for (let i = 0; i < 3; i++) {
         const foodDiv = document.createElement("div");
         const foodName = document.createElement("h4");
@@ -42,11 +45,14 @@ function addBreakfastMenu() {
         foodInfo.textContent = foodInfoList[i];
         foodPrice.textContent = foodPriceList[i];
         foodTagline.textContent = foodTaglineList[i];
+        foodTagline.style.fontStyle = "italic";
+        foodTagline.style.fontSize = "20px";
 
         foodDiv.appendChild(foodName);
         foodDiv.appendChild(foodInfo);
         foodDiv.appendChild(foodPrice);
         foodDiv.appendChild(foodTagline);
+        foodDiv.classList.add("dish" + (i+1));
         contentDiv.appendChild(foodDiv);
     }
     content.appendChild(contentDiv);
@@ -55,7 +61,10 @@ function addBreakfastMenu() {
 function addLunchMenu() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h3");
+
+    contentDiv.classList.add("menucontent2");
     contentHeader.textContent = "Lunch Menu";
+    contentHeader.classList.add("miniheader");
     contentDiv.appendChild(contentHeader);
 
     const foodNameList = ["Sukuna's Great Offering", "Gojo's Limitless Ramen", "Shibuya Humans Splatter: Cursed Transformation"];
@@ -86,11 +95,14 @@ function addLunchMenu() {
         foodInfo.textContent = foodInfoList[i];
         foodPrice.textContent = foodPriceList[i];
         foodTagline.textContent = foodTaglineList[i];
+        foodTagline.style.fontStyle = "italic";
+        foodTagline.style.fontSize = "20px";
 
         foodDiv.appendChild(foodName);
         foodDiv.appendChild(foodInfo);
         foodDiv.appendChild(foodPrice);
         foodDiv.appendChild(foodTagline);
+        foodDiv.classList.add("dish" + (i+1));
         contentDiv.appendChild(foodDiv);
     }
     content.appendChild(contentDiv);
@@ -99,7 +111,10 @@ function addLunchMenu() {
 function addDinnerMenu() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h3");
+
+    contentDiv.classList.add("menucontent3");
     contentHeader.textContent = "Dinner Menu";
+    contentHeader.classList.add("miniheader");
     contentDiv.appendChild(contentHeader);
 
     const foodNameList = ["Sukuna's Midnight Banquet", "Mahito's Cursed Spirit Feast", "Jogo's Lava Stew"];
@@ -130,11 +145,14 @@ function addDinnerMenu() {
         foodInfo.textContent = foodInfoList[i];
         foodPrice.textContent = foodPriceList[i];
         foodTagline.textContent = foodTaglineList[i];
+        foodTagline.style.fontStyle = "italic";
+        foodTagline.style.fontSize = "20px";
 
         foodDiv.appendChild(foodName);
         foodDiv.appendChild(foodInfo);
         foodDiv.appendChild(foodPrice);
         foodDiv.appendChild(foodTagline);
+        foodDiv.classList.add("dish" + (i+1));
         contentDiv.appendChild(foodDiv);
     }
     content.appendChild(contentDiv);
@@ -143,7 +161,10 @@ function addDinnerMenu() {
 function addBeverages() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h3");
+
+    contentDiv.classList.add("menucontent4");
     contentHeader.textContent = "Beverages";
+    contentHeader.classList.add("miniheader");
     contentDiv.appendChild(contentHeader);
 
     const foodNameList = ["Nanami's Vacation: Beach Smoothie", "Hanami's Bloom: Sakura Lemonade", "Toge's Frizzy Drink: Sparkling"];
@@ -174,11 +195,14 @@ function addBeverages() {
         foodInfo.textContent = foodInfoList[i];
         foodPrice.textContent = foodPriceList[i];
         foodTagline.textContent = foodTaglineList[i];
+        foodTagline.style.fontStyle = "italic";
+        foodTagline.style.fontSize = "20px";
 
         foodDiv.appendChild(foodName);
         foodDiv.appendChild(foodInfo);
         foodDiv.appendChild(foodPrice);
         foodDiv.appendChild(foodTagline);
+        foodDiv.classList.add("dish" + (i+1));
         contentDiv.appendChild(foodDiv);
     }
     content.appendChild(contentDiv);
@@ -187,7 +211,10 @@ function addBeverages() {
 function addDessertsMenu() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h3");
+
+    contentDiv.classList.add("menucontent5");
     contentHeader.textContent = "Desserts";
+    contentHeader.classList.add("miniheader");
     contentDiv.appendChild(contentHeader);
 
     const foodNameList = ["The Brothers: Jennifer Lawrence Jumbo Special", "Shoko's Specialty: Healing Strawberry Shortcake", "Rika's Love: Truffles Ring"];
@@ -218,11 +245,14 @@ function addDessertsMenu() {
         foodInfo.textContent = foodInfoList[i];
         foodPrice.textContent = foodPriceList[i];
         foodTagline.textContent = foodTaglineList[i];
+        foodTagline.style.fontStyle = "italic";
+        foodTagline.style.fontSize = "20px";
 
         foodDiv.appendChild(foodName);
         foodDiv.appendChild(foodInfo);
         foodDiv.appendChild(foodPrice);
         foodDiv.appendChild(foodTagline);
+        foodDiv.classList.add("dish" + (i+1));
         contentDiv.appendChild(foodDiv);
     }
     content.appendChild(contentDiv);

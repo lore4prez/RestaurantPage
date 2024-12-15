@@ -4,14 +4,33 @@ function addAboutHeader() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h1");
 
+    contentDiv.classList.add("header");
     contentHeader.textContent = "About Us";
     contentDiv.appendChild(contentHeader);
+    content.appendChild(contentDiv);
+}
+
+function addAboutContent() {
+    const contentDiv = document.createElement("div");
+    const contentAboutUs = document.createElement("p");
+
+    contentDiv.classList.add("content1");
+    contentAboutUs.textContent = 
+    `Welcome to Sukuna's Restaurant, where the flavors of the world collide in a dining experience unlike 
+    any other. Inspired by the legendary King of Curses, Ryomen Sukuna, our restaurant offers an 
+    unforgettable journey into the depths of culinary darkness. Every meal is an offering to the hungry 
+    spirits of the cursed realm. Our culinary philosophy is rooted in bold flavors, unique ingredients, 
+    and the powerful energy that flows through our food. Are you ready to embrace the curse?`;
+    
+    contentDiv.appendChild(contentAboutUs);
     content.appendChild(contentDiv);
 }
 
 function addContactInfo() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h3");
+
+    contentDiv.classList.add("contact");
     contentHeader.textContent = "Contact Us";
     contentDiv.appendChild(contentHeader);
 
@@ -33,4 +52,4 @@ function addContactInfo() {
     content.appendChild(contentDiv);
 }
 
-export {addAboutHeader, addContactInfo};
+export {addAboutHeader, addContactInfo, addAboutContent};

@@ -1,3 +1,172 @@
+/* Edits */
+:root {
+    --main-radius: 5px;
+    --main-padding: 5px;
+}
+
 body {
-    background-color:rgb(236, 176, 164);
+    display: grid;
+    margin: 0;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 1.4fr;
+    grid-template-areas: 
+    "nav"
+    "content"; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 23px;
+    color: rgb(245, 245, 220);
+
+}
+
+nav {
+    background-color: rgb(0, 0, 0);
+    grid-area: nav;
+    text-align: center;
+    align-content: center;
+
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+button {
+    width: 10rem;
+    height: 5rem;
+    font-size: 1.5rem;
+    border-radius: var(--main-radius);
+    background-color: antiquewhite;
+}
+
+#content {
+    grid-area: content;
+    /* display: grid; */
+    background-color: rgb(104, 4, 4);
+}
+
+
+/* Home Page Divs */
+.homepage {
+    text-align: center;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr 0.5fr 0.1fr;
+
+    grid-template-areas:
+    "header"
+    "content1"
+    "content2"
+    "content3"
+    "footer";
+}
+.header {
+    grid-area: header;
+    text-transform: capitalize;
+}
+
+.content1 {
+    grid-area: content1;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.content2 {
+    grid-area: content2;
+}
+
+.content3 {
+    grid-area: content3;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/* Menu Page Divs */
+.menupage {
+    text-align: center;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 1fr 1fr 1fr 1fr 1fr 0.2fr;
+
+    grid-template-areas: 
+    "header"
+    "menucontent1"
+    "menucontent2"
+    "menucontent3"
+    "menucontent4"
+    "menucontent5"
+    "footer";
+
+    row-gap: 20px;
+}
+
+.menucontent1, .menucontent2, .menucontent3, .menucontent4, .menucontent5 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 1fr;
+
+    grid-template-areas: 
+    "miniheader miniheader miniheader "
+    "dish1 dish2 dish3";
+
+    border-top: 5px solid black;
+    column-gap: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.miniheader {
+    display:grid;
+    grid-column: 1 / span 3;
+}
+
+.menucontent1 {
+    grid-area: menucontent1;
+}
+.menucontent2 {
+    grid-area: menucontent2;
+}
+.menucontent3 {
+    grid-area: menucontent3;
+}
+.menucontent4 {
+    grid-area: menucontent4;
+}
+.menucontent5 {
+    grid-area: menucontent5;
+}
+
+.dish1, .dish2, .dish3 {
+    border: 2px solid black;
+}
+
+.dish1 {
+    grid-area: dish1;
+}
+.dish2 {
+    grid-area: dish2;
+}
+.dish3 {
+    grid-area: dish3;
+}
+
+/* About Us Page */
+.aboutpage {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr 0.2fr;
+
+    grid-template-areas: 
+    "header"
+    "content1"
+    "contact"
+    "footer";
+
+    text-align: center;
+}
+
+.contact {
+    grid-area: contact;
 }
