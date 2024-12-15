@@ -1,5 +1,6 @@
 import "./styles.css";
-import {addHomeHeader, addDescrip, addOpenHours, addLocation} from "./home.js";
+import {content, addHomeHeader, addDescrip, addOpenHours, addLocation} from "./home.js";
+import {addMenuHeader, addBreakfastMenu, addLunchMenu, addDinnerMenu, addBeverages, addDessertsMenu} from "./menu.js";
 
 // default, home page will be shown
 addHomeHeader();
@@ -9,7 +10,7 @@ addLocation();
 
 // Tab switching logic
 // Home Page
-const content = document.querySelector("#content");
+// const content = document.querySelector("#content");
 
 function goToHome() {
     content.innerHTML = "";
@@ -25,6 +26,12 @@ homeBtn.addEventListener("click", goToHome);
 // Menu Page
 function goToMenu() {
     content.innerHTML = "";
+    addMenuHeader();
+    addBreakfastMenu();
+    addLunchMenu();
+    addDinnerMenu();
+    addBeverages();
+    addDessertsMenu();
 }
 
 const menuBtn = document.querySelector(".menu");

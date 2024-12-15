@@ -4,7 +4,7 @@ function addHomeHeader() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h1");
 
-    contentHeader.textContent = "Welcome to Sukuna's Malevolent Shrine";
+    contentHeader.textContent = "Welcome to Sukuna's Malevolent Restaurant";
     contentDiv.appendChild(contentHeader);
     content.appendChild(contentDiv);
 }
@@ -62,4 +62,4 @@ function addLocation() {
 
 
 
-export {addHomeHeader, addDescrip, addOpenHours, addLocation};
+export {content, addHomeHeader, addDescrip, addOpenHours, addLocation};
