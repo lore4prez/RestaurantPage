@@ -20,13 +20,27 @@ body {
 }
 
 nav {
+    display: flex;
     background-color: rgb(0, 0, 0);
     grid-area: nav;
     text-align: center;
-    align-content: center;
+    justify-content: center;
+    /* align-content: center; */
+    /* align-items: center; */
 
     padding-top: var(--main-padding);
     padding-bottom: var(--main-padding);
+}
+
+.threeBtns {
+    display:flex;
+    gap: 20px;
+}
+
+.hamburger {
+    display: none;
+    font-size: 3rem;
+    cursor: pointer;
 }
 
 button {
@@ -169,4 +183,124 @@ button {
 
 .contact {
     grid-area: contact;
+}
+
+/* Side Menu styles */
+.side-menu {
+    height: 100%; 
+    width: 250px; /* Width of the side slider */
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hide the menu off-screen initially */
+    background-color: #333;
+    padding-top: 60px;
+    transition: left 0.3s ease; /* Smooth transition */
+    z-index: 1000;
+}
+
+.home2, .menu2, .about2 {
+    padding: 20px;
+    text-align: left;
+    border: none;
+    background: none;
+    color: white;
+    width: 100%;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.close-btn {
+    text-align: right;
+    padding: 20px;
+    border: none;
+    background: none;
+    color: white;
+    width: 100%;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Mobile */
+@media only screen and (max-width: 700px) {
+    .threeBtns {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    nav {
+        justify-content: flex-end;
+    }
+
+    .side-menu {
+        left: -250px;
+    }
+
+    /* Menu Page Divs */
+    .menupage {
+        text-align: center;
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 1fr 1fr 1fr 1fr 1fr 0.2fr;
+
+        grid-template-areas: 
+        "header"
+        "menucontent1"
+        "menucontent2"
+        "menucontent3"
+        "menucontent4"
+        "menucontent5"
+        "footer";
+
+        row-gap: 20px;
+    }
+
+    .menucontent1, .menucontent2, .menucontent3, .menucontent4, .menucontent5 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 1fr 1fr 1fr;
+
+        grid-template-areas: 
+        "miniheader"
+        "dish1"
+        "dish2" 
+        "dish3";
+
+        border-top: 5px solid black;
+        row-gap: 10px;
+        margin: 20px;
+        padding:20px;
+    }
+
+    .menucontent1 {
+        grid-area: menucontent1;
+    }
+    .menucontent2 {
+        grid-area: menucontent2;
+    }
+    .menucontent3 {
+        grid-area: menucontent3;
+    }
+    .menucontent4 {
+        grid-area: menucontent4;
+    }
+    .menucontent5 {
+        grid-area: menucontent5;
+    }
+
+    .dish1, .dish2, .dish3 {
+        border: 2px solid black;
+    }
+
+    .dish1 {
+        grid-area: dish1;
+    }
+    .dish2 {
+        grid-area: dish2;
+    }
+    .dish3 {
+        grid-area: dish3;
+    }
 }
