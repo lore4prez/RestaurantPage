@@ -65,3 +65,13 @@ module.exports = {
     ],
   },
 };
+
+
+To deploy on GitHub Pages:
+-make a new branch to deploy from (git branch gh-pages)
+-commit any work and push
+-git checkout gh-pages && git merge main --no-edit
+-npx webpack or npm run build
+-git add dist -f && git commit -m "deployment commit"
+-git subtree push --prefix dist origin gh-pages
+-git checkout main
