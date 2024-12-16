@@ -255,7 +255,7 @@ button {
         "menucontent5"
         "footer";
 
-        row-gap: 15px;
+        row-gap: 10px;
     }
 
     .menucontent1, .menucontent2, .menucontent3, .menucontent4, .menucontent5 {
@@ -270,7 +270,7 @@ button {
         "dish3";
 
         border-top: 5px solid black;
-        row-gap: 10px;
+        row-gap: 8px;
         margin: 20px;
         padding:20px;
     }
