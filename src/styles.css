@@ -228,6 +228,7 @@ button {
 
     .hamburger {
         display: block;
+        color:black;
     }
 
     nav {
@@ -243,7 +244,7 @@ button {
         text-align: center;
         display:grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 0.2fr 1fr 1fr 1fr 1fr 1fr 0.2fr;
+        grid-template-rows: 0.05fr 1fr 1fr 1fr 1fr 1fr 0.2fr;
 
         grid-template-areas: 
         "header"
