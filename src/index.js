@@ -58,8 +58,12 @@ function goToHome() {
 
 const homeBtn = document.querySelector(".home");
 const homeBtn2 = document.querySelector(".home2");
+const homeBtnRestoName = document.querySelector(".resto-name");
+const homeBtnRestoName2 = document.querySelector(".resto-name2");
 homeBtn.addEventListener("click", goToHome);
 homeBtn2.addEventListener("click", goToHome);
+homeBtnRestoName.addEventListener("click", goToHome);
+homeBtnRestoName2.addEventListener("click", goToHome);
 
 // Menu Page
 function goToMenu() {

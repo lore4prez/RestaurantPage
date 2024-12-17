@@ -19,14 +19,19 @@ body {
 
 }
 
+.resto-name {
+    display: block;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
 nav {
     display: flex;
     background-color: rgb(0, 0, 0);
     grid-area: nav;
     text-align: center;
-    justify-content: center;
-    /* align-content: center; */
-    /* align-items: center; */
+    justify-content: space-between;
+    align-items: center;
 
     padding-top: var(--main-padding);
     padding-bottom: var(--main-padding);
@@ -229,7 +234,7 @@ button {
     z-index: 1000;
 }
 
-.home2, .menu2, .about2 {
+.home2, .menu2, .about2, .resto-name2 {
     padding: 20px;
     text-align: left;
     border: none;
@@ -263,7 +268,9 @@ button {
     }
 
     nav {
-        justify-content: flex-end;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .side-menu {
