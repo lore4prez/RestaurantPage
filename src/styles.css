@@ -35,6 +35,7 @@ nav {
 .threeBtns {
     display:flex;
     gap: 20px;
+    margin: 0.5em;
 }
 
 .hamburger {
@@ -97,6 +98,7 @@ button {
 
 /* Menu Page Divs */
 .menupage {
+    justify-items: center;
     text-align: center;
     display:grid;
     grid-template-columns: 1fr;

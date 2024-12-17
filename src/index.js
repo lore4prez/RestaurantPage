@@ -1,6 +1,7 @@
 import "./styles.css";
+import "./dropdown.css";
 import {content, addHomeHeader, addDescrip, addOpenHours, addLocation, addFooter} from "./home.js";
-import {addMenuHeader, addBreakfastMenu, addLunchMenu, addDinnerMenu, addBeverages, addDessertsMenu} from "./menu.js";
+import {addMenuHeader, addBreakfastMenu, addLunchMenu, addDinnerMenu, addBeverages, addDessertsMenu, addDropDown} from "./menu.js";
 import {addAboutHeader, addContactInfo, addAboutContent} from "./about.js";
 import sukunaShrine from "./images/evilshrine.jpg";
 import sukuna from "./images/sukuna.jpeg";
@@ -144,3 +145,14 @@ sideMenuButtons.forEach(button => {
 closeBtn.addEventListener('click', () => {
     sideMenu.style.left = '-250px'; 
 });
+
+
+
+// dropdown 
+document.addEventListener("DOMContentLoaded", () => {
+    const select = document.querySelector(".select");
+    select.addEventListener("click", () => {
+        alert("select is clicked");
+    })
+})
+

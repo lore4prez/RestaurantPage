@@ -1,15 +1,23 @@
 import {content} from "./home.js";
+import {addDropDown, dropdownEventListener} from "./dropdown.js";
 
+// To make a label for the page (menu in this case)
 function addMenuHeader() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h1");
+    const dropdown = addDropDown();
+    dropdownEventListener(dropdown);
 
     contentDiv.classList.add("header");
     contentHeader.textContent = "Menu";
     contentDiv.appendChild(contentHeader);
+    contentDiv.appendChild(dropdown);
+
     content.appendChild(contentDiv);
 }
 
+// Dynamically create a breakfast menu
+// One container div has [header, foodname, food description, foodprice, foodtagline]
 function addBreakfastMenu() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h3");
@@ -58,6 +66,7 @@ function addBreakfastMenu() {
     content.appendChild(contentDiv);
 }
 
+// Dynamically create a lunch menu
 function addLunchMenu() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h3");
@@ -108,6 +117,7 @@ function addLunchMenu() {
     content.appendChild(contentDiv);
 }
 
+// Dynamically create a dinner menu
 function addDinnerMenu() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h3");
@@ -158,6 +168,7 @@ function addDinnerMenu() {
     content.appendChild(contentDiv);
 }
 
+// Dynamically create a list of beverages
 function addBeverages() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h3");
@@ -208,6 +219,7 @@ function addBeverages() {
     content.appendChild(contentDiv);
 }
 
+// Dynamically create a list of desserts
 function addDessertsMenu() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h3");
@@ -258,4 +270,4 @@ function addDessertsMenu() {
     content.appendChild(contentDiv);
 }
 
-export {addMenuHeader, addBreakfastMenu, addLunchMenu, addDinnerMenu, addBeverages, addDessertsMenu};
+export {addMenuHeader, addBreakfastMenu, addLunchMenu, addDinnerMenu, addBeverages, addDessertsMenu, addDropDown};
