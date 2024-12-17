@@ -72,7 +72,7 @@ function addFooter() {
     const country = document.createElement("p");
 
     contentDiv.classList.add("footer");
-    credits.textContent = `Images credit: "Evil Shrine" & "King of Curses" from Pinterest`;
+    credits.textContent = `Images credit: "Evil Shrine" & "Sukuna and Uraume" from Pinterest`;
     copyright.textContent = "Copyright @2024 Sukuna Inc. All rights reserved";
     policy.textContent = "Privacy Policy | Terms of Use | Legal";
     country.textContent = "Sukuna country";
