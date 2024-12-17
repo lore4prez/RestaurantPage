@@ -49,10 +49,10 @@ nav {
     cursor: pointer;
 }
 
-button {
-    width: 10rem;
-    height: 5rem;
-    font-size: 1.5rem;
+.home, .menu, .about {
+    width: 6rem;
+    height: 3rem;
+    font-size: 1.2rem;
     border-radius: var(--main-radius);
     background-color: antiquewhite;
 }
@@ -257,7 +257,7 @@ button {
 }
 
 /* Mobile */
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
     .threeBtns {
         display: none;
     }
@@ -265,6 +265,11 @@ button {
     .hamburger {
         display: block;
         color: black;
+        width: 6rem;
+        height: 3rem;
+        font-size: 2rem;
+        text-align: center;
+        margin-right: 5px;
     }
 
     nav {
