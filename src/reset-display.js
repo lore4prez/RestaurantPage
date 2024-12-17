@@ -28,7 +28,7 @@ function menuDisplay(page, allContent) {
 }
 
 function aboutDisplay(page) {
-    page.style.gridTemplateRows = "0.5fr 1fr 1fr 0.2fr";
+    page.style.gridTemplateRows = "0.5fr 1fr 2fr 0.1fr";
     page.style.gridTemplateAreas = 
     `
     "header"

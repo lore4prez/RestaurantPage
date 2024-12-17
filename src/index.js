@@ -6,7 +6,7 @@ import {addAboutHeader, addContactInfo, addAboutContent} from "./about.js";
 import {filterMenuPage, dropdownEventListener} from "./dropdown.js";
 import {homeDisplay, menuDisplay, aboutDisplay} from "./reset-display.js";
 import sukunaShrine from "./images/evilshrine.jpg";
-import sukuna from "./images/sukuna.jpeg";
+import sukunaAndUraume from "./images/sukuna-uraume.jpeg";
 
 // default, home page will be shown
 content.classList.add("homepage");
@@ -103,7 +103,7 @@ function goToAbout() {
     content.classList.add("aboutpage");
 
     if (!(window.innerWidth <= 768)) {
-        content.style.backgroundImage = `url(${sukuna})`;
+        content.style.backgroundImage = `url(${sukunaAndUraume})`;
         content.style.backgroundSize = "100%";
         content.style.backgroundRepeat = "no-repeat";
         content.style.backgroundPosition = "center";

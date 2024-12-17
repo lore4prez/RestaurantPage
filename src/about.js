@@ -32,23 +32,35 @@ function addContactInfo() {
 
     contentDiv.classList.add("contact");
     contentHeader.textContent = "Contact Us";
+    contentHeader.classList.add("contactHeader");
     contentDiv.appendChild(contentHeader);
 
-    const name = document.createElement("h4");
-    const role = document.createElement("p");
-    const phoneNum = document.createElement("p");
-    const email = document.createElement("p");
+    const nameList = ["Ryomen Sukuna", "Ryomen Uraume"];
+    const roleList = ["Owner", "Head Chef"];
+    const phoneNumList = ["+9(999)9999-9999", "+1(111)1111-1111"];
+    const emailList = ["sukunaistheking@gmail.com", "ilovesukuna<3@gmail.com"];
 
-    name.textContent = "Ryomen Sukuna";
-    role.textContent = "Owner";
-    phoneNum.textContent = "999-9999-9999";
-    email.textContent = "sukunaistheking@gmail.com";
+    for (let i = 0; i < nameList.length; i++) {
+        const contactDiv = document.createElement("div");
+        const name = document.createElement("h4");
+        const role = document.createElement("p");
+        const phoneNum = document.createElement("p");
+        const email = document.createElement("p");
 
-    contentDiv.appendChild(name);
-    contentDiv.appendChild(role);
-    contentDiv.appendChild(phoneNum);
-    contentDiv.appendChild(email);
+        name.textContent = nameList[i];
+        role.textContent = roleList[i];
+        phoneNum.textContent = phoneNumList[i];
+        email.textContent = emailList[i];
+        role.style.fontSize = "20px";
+        role.style.fontStyle = "italic";
 
+        contactDiv.appendChild(name);
+        contactDiv.appendChild(role);
+        contactDiv.appendChild(phoneNum);
+        contactDiv.appendChild(email);
+        contactDiv.classList.add("contact" + (i+1));
+        contentDiv.appendChild(contactDiv);
+    }
     content.appendChild(contentDiv);
 }
 

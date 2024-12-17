@@ -175,9 +175,10 @@ button {
 /* About Us Page */
 .aboutpage {
     display: grid;
+    justify-items: center;
+    /* text-align: center; */
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 1fr 1fr 0.2fr;
-
+    grid-template-rows: 0.5fr 1fr 2fr 0.1fr;
     grid-template-areas: 
     "header"
     "content1"
@@ -189,7 +190,31 @@ button {
 
 .contact {
     grid-area: contact;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 1fr;
+
+    grid-template-areas: 
+    "contactHeader contactHeader"
+    "contact1 contact2";
 }
+.contactHeader {
+    grid-area: contactHeader;
+}
+
+.contact1, .contact2 {
+    margin: 20px;
+}
+
+.contact1 {
+    grid-area: contact1;
+}
+
+.contact2 {
+    grid-area: contact2;
+}
+
+
 
 /* Side Menu styles */
 .side-menu {
