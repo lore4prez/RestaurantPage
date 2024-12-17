@@ -1,11 +1,12 @@
 import {content} from "./home.js";
 import {addDropDown, dropdownEventListener} from "./dropdown.js";
 
+const dropdown = addDropDown();
+
 // To make a label for the page (menu in this case)
 function addMenuHeader() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h1");
-    const dropdown = addDropDown();
     dropdownEventListener(dropdown);
 
     contentDiv.classList.add("header");
@@ -22,6 +23,7 @@ function addBreakfastMenu() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h3");
 
+    contentDiv.classList.add("menucontent");
     contentDiv.classList.add("menucontent1");
     contentHeader.textContent = "Breakfast Menu";
     contentHeader.classList.add("miniheader");
@@ -71,6 +73,7 @@ function addLunchMenu() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h3");
 
+    contentDiv.classList.add("menucontent");
     contentDiv.classList.add("menucontent2");
     contentHeader.textContent = "Lunch Menu";
     contentHeader.classList.add("miniheader");
@@ -122,6 +125,7 @@ function addDinnerMenu() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h3");
 
+    contentDiv.classList.add("menucontent");
     contentDiv.classList.add("menucontent3");
     contentHeader.textContent = "Dinner Menu";
     contentHeader.classList.add("miniheader");
@@ -173,6 +177,7 @@ function addBeverages() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h3");
 
+    contentDiv.classList.add("menucontent");
     contentDiv.classList.add("menucontent4");
     contentHeader.textContent = "Beverages";
     contentHeader.classList.add("miniheader");
@@ -224,6 +229,7 @@ function addDessertsMenu() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h3");
 
+    contentDiv.classList.add("menucontent");
     contentDiv.classList.add("menucontent5");
     contentHeader.textContent = "Desserts";
     contentHeader.classList.add("miniheader");
@@ -270,4 +276,4 @@ function addDessertsMenu() {
     content.appendChild(contentDiv);
 }
 
-export {addMenuHeader, addBreakfastMenu, addLunchMenu, addDinnerMenu, addBeverages, addDessertsMenu, addDropDown};
+export {dropdown, addMenuHeader, addBreakfastMenu, addLunchMenu, addDinnerMenu, addBeverages, addDessertsMenu, addDropDown};

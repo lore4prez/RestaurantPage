@@ -117,7 +117,6 @@ button {
 }
 
 .menucontent1, .menucontent2, .menucontent3, .menucontent4, .menucontent5 {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.1fr 1fr;
 
@@ -139,18 +138,23 @@ button {
 }
 
 .menucontent1 {
+    display:grid;
     grid-area: menucontent1;
 }
 .menucontent2 {
+    display:grid;
     grid-area: menucontent2;
 }
 .menucontent3 {
+    display:grid;
     grid-area: menucontent3;
 }
 .menucontent4 {
+    display:grid;
     grid-area: menucontent4;
 }
 .menucontent5 {
+    display:grid;
     grid-area: menucontent5;
 }
 

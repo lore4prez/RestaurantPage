@@ -17,7 +17,7 @@
     align-items: center;
     /* position: absolute; */
     width: 300px;
-    border: 2px pink solid;
+    border: 2px hsl(222, 17%, 20%);
     border-radius: 0.5rem;
     padding: 0.5em;
     cursor: pointer;
@@ -84,3 +84,5 @@
     display: block;
     opacity: 1;
 }
+
+/* Menu dropdown */

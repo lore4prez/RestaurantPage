@@ -1,15 +1,20 @@
+import {content} from "./home.js";
+
 // Dynamically create a dropdown 
 function addDropDown() {
+    // Create the elements needed
     const dropdown = document.createElement("div");
-    dropdown.classList.add("dropdown");
-
     const selectDiv = document.createElement("div");
-    selectDiv.classList.add("select");
     const selectedDiv = document.createElement("div");
-    selectedDiv.classList.add("selected");
     const caretDiv = document.createElement("div");
+
+    // Add classes to each element
+    dropdown.classList.add("dropdown");
+    selectDiv.classList.add("select");
+    selectedDiv.classList.add("selected");
     caretDiv.classList.add("caret");
 
+    // Append the select and caret divs to overall container select div
     selectDiv.appendChild(selectedDiv);
     selectDiv.appendChild(caretDiv);
 
@@ -69,4 +74,58 @@ function dropdownEventListener(dropdown) {
     });
 }
 
-export {addDropDown, dropdownEventListener};
+function filterMenuPage(dropdown) {
+    const options = dropdown.querySelectorAll(".dropdown-list li");
+    const allMenuContent = document.querySelectorAll(".menucontent");
+    console.log(allMenuContent);
+
+    options.forEach(option => {
+        option.addEventListener("click", () => {
+            if (option.textContent !== "Full Menu") {
+                const menucontent = findWhichMenuContent(option.textContent);
+                const activeMenu = document.querySelector("." + menucontent);
+                content.style.gridTemplateRows = "0.2fr 1fr 0.2fr";
+                content.style.gridTemplateAreas = 
+                `
+                "header"
+                "${menucontent}"
+                "footer"
+                `;
+                allMenuContent.forEach(item => {
+                    item.style.display = "none";
+                });
+                activeMenu.style.display = "grid";
+            }
+            else {
+                content.style.gridTemplateRows = "0.2fr 1fr 1fr 1fr 1fr 1fr 0.2fr";
+                content.style.gridTemplateAreas = 
+                `
+                "header"
+                "menucontent1"
+                "menucontent2"
+                "menucontent3"
+                "menucontent4"
+                "menucontent5"
+                "footer"
+                `;
+                allMenuContent.forEach(item => {
+                    item.style.display = "grid";
+                });
+            }
+        });
+    });
+    
+}
+
+function findWhichMenuContent(option) {
+    const optionList = new Map();
+    optionList.set("Breakfast", "menucontent1");
+    optionList.set("Lunch", "menucontent2");
+    optionList.set("Dinner", "menucontent3");
+    optionList.set("Beverages", "menucontent4");
+    optionList.set("Desserts", "menucontent5");
+
+    return optionList.get(option);
+}
+
+export {addDropDown, dropdownEventListener, filterMenuPage};
