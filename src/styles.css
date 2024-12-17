@@ -167,6 +167,7 @@ nav {
 
 .dish1, .dish2, .dish3 {
     border: 2px solid black;
+    padding: 20px;
 }
 
 .dish1 {
@@ -287,7 +288,7 @@ nav {
     /* Menu Page Divs */
     .menucontent1, .menucontent2, .menucontent3, .menucontent4, .menucontent5 {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
         grid-template-rows: 0.1fr 1fr 1fr 1fr;
 
         grid-template-areas: 
@@ -299,7 +300,6 @@ nav {
         border-top: 5px solid black;
         row-gap: 8px;
         margin: 20px;
-        padding:20px;
     }
 
     /* About Page Divs */
