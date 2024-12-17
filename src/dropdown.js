@@ -1,4 +1,5 @@
 import {content} from "./home.js";
+import {menuDisplay} from "./reset-display.js";
 
 // Dynamically create a dropdown 
 function addDropDown() {
@@ -77,15 +78,15 @@ function dropdownEventListener(dropdown) {
 function filterMenuPage(dropdown) {
     const options = dropdown.querySelectorAll(".dropdown-list li");
     const allMenuContent = document.querySelectorAll(".menucontent");
-    console.log(allMenuContent);
+    const menupage = document.querySelector(".menupage");
 
     options.forEach(option => {
         option.addEventListener("click", () => {
             if (option.textContent !== "Full Menu") {
                 const menucontent = findWhichMenuContent(option.textContent);
                 const activeMenu = document.querySelector("." + menucontent);
-                content.style.gridTemplateRows = "0.2fr 1fr 0.2fr";
-                content.style.gridTemplateAreas = 
+                menupage.style.gridTemplateRows = "0.2fr 1fr 0.2fr";
+                menupage.style.gridTemplateAreas = 
                 `
                 "header"
                 "${menucontent}"
@@ -97,20 +98,7 @@ function filterMenuPage(dropdown) {
                 activeMenu.style.display = "grid";
             }
             else {
-                content.style.gridTemplateRows = "0.2fr 1fr 1fr 1fr 1fr 1fr 0.2fr";
-                content.style.gridTemplateAreas = 
-                `
-                "header"
-                "menucontent1"
-                "menucontent2"
-                "menucontent3"
-                "menucontent4"
-                "menucontent5"
-                "footer"
-                `;
-                allMenuContent.forEach(item => {
-                    item.style.display = "grid";
-                });
+                menuDisplay(menupage, allMenuContent);
             }
         });
     });

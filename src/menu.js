@@ -1,13 +1,12 @@
 import {content} from "./home.js";
-import {addDropDown, dropdownEventListener} from "./dropdown.js";
+import {addDropDown} from "./dropdown.js";
 
-const dropdown = addDropDown();
 
 // To make a label for the page (menu in this case)
 function addMenuHeader() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h1");
-    dropdownEventListener(dropdown);
+    const dropdown = addDropDown();
 
     contentDiv.classList.add("header");
     contentHeader.textContent = "Menu";
@@ -29,7 +28,7 @@ function addBreakfastMenu() {
     contentHeader.classList.add("miniheader");
     contentDiv.appendChild(contentHeader); 
 
-    const foodNameList = ["Sukuna's Cursed Pancakes", "Megumi's Shikigami Waflles", "Gojo's Infinity Omelette"];
+    const foodNameList = ["Sukuna's Cursed Pancakes", "Megumi's Shikigami Waffles", "Gojo's Infinity Omelette"];
     const foodPriceList = ["$7.50", "$5.50", "$9.50"];
     
     const foodInfoList = 
@@ -80,7 +79,7 @@ function addLunchMenu() {
     contentDiv.appendChild(contentHeader);
 
     const foodNameList = ["Sukuna's Great Offering", "Gojo's Limitless Ramen", "Shibuya Humans Splatter: Cursed Transformation"];
-    const foodPriceList = ["$14.50", "$16.50", "12.50"];
+    const foodPriceList = ["$14.50", "$16.50", "$12.50"];
 
     const foodInfoList = 
     [   
@@ -276,4 +275,4 @@ function addDessertsMenu() {
     content.appendChild(contentDiv);
 }
 
-export {dropdown, addMenuHeader, addBreakfastMenu, addLunchMenu, addDinnerMenu, addBeverages, addDessertsMenu, addDropDown};
+export {addMenuHeader, addBreakfastMenu, addLunchMenu, addDinnerMenu, addBeverages, addDessertsMenu, addDropDown};

@@ -1,9 +1,10 @@
 import "./styles.css";
 import "./dropdown.css";
 import {content, addHomeHeader, addDescrip, addOpenHours, addLocation, addFooter} from "./home.js";
-import {dropdown, addMenuHeader, addBreakfastMenu, addLunchMenu, addDinnerMenu, addBeverages, addDessertsMenu, addDropDown} from "./menu.js";
+import {addMenuHeader, addBreakfastMenu, addLunchMenu, addDinnerMenu, addBeverages, addDessertsMenu, addDropDown} from "./menu.js";
 import {addAboutHeader, addContactInfo, addAboutContent} from "./about.js";
-import {filterMenuPage} from "./dropdown.js";
+import {filterMenuPage, dropdownEventListener} from "./dropdown.js";
+import {homeDisplay, menuDisplay, aboutDisplay} from "./reset-display.js";
 import sukunaShrine from "./images/evilshrine.jpg";
 import sukuna from "./images/sukuna.jpeg";
 
@@ -34,8 +35,8 @@ function goToHome() {
         content.classList.remove("aboutpage");
     if (content.classList.contains("menupage"))
         content.classList.remove("menupage");
-    if (!content.classList.contains("homepage"))
-        content.classList.add("homepage");
+    
+    content.classList.add("homepage");
     
     if (!(window.innerWidth <= 768)) {
         content.style.backgroundImage = `url(${sukunaShrine})`;
@@ -46,13 +47,13 @@ function goToHome() {
     else {
         content.style.backgroundImage = "none";
     }
-    
 
     addHomeHeader();
     addDescrip();
     addOpenHours();
     addLocation();
     addFooter();
+    homeDisplay(content);
 }
 
 const homeBtn = document.querySelector(".home");
@@ -67,11 +68,9 @@ function goToMenu() {
         content.classList.remove("aboutpage");
     if (content.classList.contains("homepage"))
         content.classList.remove("homepage");
-    if (!content.classList.contains("menupage"))
-        content.classList.add("menupage");
-
+    
+    content.classList.add("menupage");
     content.style.backgroundImage = "none";
-
     addMenuHeader();
     addBreakfastMenu();
     addLunchMenu();
@@ -80,7 +79,12 @@ function goToMenu() {
     addDessertsMenu();
     addFooter();
 
+    const dropdown = document.querySelector(".dropdown");
+    dropdownEventListener(dropdown);
     filterMenuPage(dropdown);
+    const allMenuContent = document.querySelectorAll(".menucontent");
+    menuDisplay(content, allMenuContent);
+    
 }
 
 const menuBtn = document.querySelector(".menu");
@@ -95,8 +99,8 @@ function goToAbout() {
         content.classList.remove("homepage");
     if (content.classList.contains("menupage"))
         content.classList.remove("menupage");
-    if (!content.classList.contains("aboutpage"))
-        content.classList.add("aboutpage");
+    
+    content.classList.add("aboutpage");
 
     if (!(window.innerWidth <= 768)) {
         content.style.backgroundImage = `url(${sukuna})`;
@@ -112,6 +116,7 @@ function goToAbout() {
     addAboutContent();
     addContactInfo();
     addFooter();
+    aboutDisplay(content);
 }
 
 const aboutBtn = document.querySelector(".about");
