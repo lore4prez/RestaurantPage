@@ -13,6 +13,8 @@ touch src/styles.css
 npm install --save-dev html-loader
 npm install --save-dev webpack-dev-server
 
+optional: npm install -D babel-loader @babel/core @babel/preset-env webpack
+
 To host, 
 npx webpack serve
 
