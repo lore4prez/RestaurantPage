@@ -129,6 +129,7 @@ nav {
 }
 
 .menu-header {
+    position: relative;
     display: grid; 
     grid-template-columns: 100%;
     grid-template-rows: 0.2fr 1.5fr 0.2fr;
