@@ -97,21 +97,22 @@ function updateCarousel() {
     dotList[0].classList.add("active");
 
     let index = 0;
+    const numImages = imagesList.length;
 
     function goNextSlide() {
-        index = (index + 1) % imagesList.length; // So index doesnt go too far out of bounds
+        index = (index + 1) % numImages; // So index doesnt go too far out of bounds
     
-        image1.src = imagesList[(index - 1 + imagesList.length) % imagesList.length];
-        image1.alt = foodList[(index - 1 + imagesList.length) % imagesList.length];
-        image2.src = imagesList[(index + imagesList.length) % imagesList.length];
-        image2.alt = foodList[(index + imagesList.length) % imagesList.length];
-        image3.src = imagesList[(index + 1 + imagesList.length) % imagesList.length];
-        image3.alt = foodList[(index + 1 + imagesList.length) % imagesList.length];
+        image1.src = imagesList[(index - 1 + numImages) % numImages];
+        image1.alt = foodList[(index - 1 + numImages) % numImages];
+        image2.src = imagesList[(index + numImages) % numImages];
+        image2.alt = foodList[(index + numImages) % numImages];
+        image3.src = imagesList[(index + 1 + numImages) % numImages];
+        image3.alt = foodList[(index + 1 + numImages) % numImages];
         
         dotList.forEach(item => {
             item.classList.remove("active")
         });
-        dotList[index % imagesList.length].classList.add("active");
+        dotList[index % numImages].classList.add("active");
     }
 
     setInterval(goNextSlide, 3000);
@@ -119,19 +120,19 @@ function updateCarousel() {
     nextArrow.addEventListener("click", goNextSlide);
 
     prevArrow.addEventListener("click", () => {
-        index = (index - 1 + imagesList.length) % imagesList.length; // So index doesnt go too far out of bounds
+        index = (index - 1 + numImages) % numImages; // So index doesnt go too far out of bounds
 
-        image1.src = imagesList[(index - 1 + imagesList.length) % imagesList.length];
-        image1.alt = foodList[(index - 1 + imagesList.length) % imagesList.length];
-        image2.src = imagesList[(index + imagesList.length) % imagesList.length];
-        image2.alt = foodList[(index + imagesList.length) % imagesList.length];
-        image3.src = imagesList[(index + 1 + imagesList.length) % imagesList.length];
-        image3.alt = foodList[(index + 1 + imagesList.length) % imagesList.length];
+        image1.src = imagesList[(index - 1 + numImages) % numImages];
+        image1.alt = foodList[(index - 1 + numImages) % numImages];
+        image2.src = imagesList[(index + numImages) % numImages];
+        image2.alt = foodList[(index + numImages) % numImages];
+        image3.src = imagesList[(index + 1 + numImages) % numImages];
+        image3.alt = foodList[(index + 1 + numImages) % numImages];
         
         dotList.forEach(item => {
             item.classList.remove("active")
         });
-        dotList[(index + imagesList.length) % imagesList.length].classList.add("active");
+        dotList[(index + numImages) % numImages].classList.add("active");
     
     });
 
@@ -143,12 +144,12 @@ function updateCarousel() {
             });
             dotList[index].classList.add("active");
 
-            image1.src = imagesList[index % imagesList.length];
-            image1.alt = foodList[index % imagesList.length];
-            image2.src = imagesList[(index + 1) % imagesList.length];
-            image2.alt = foodList[(index + 1) % imagesList.length];
-            image3.src = imagesList[(index + 2) % imagesList.length];
-            image3.alt = foodList[(index + 2) % imagesList.length];
+            image1.src = imagesList[(index - 1 + numImages) % numImages];
+            image1.alt = foodList[(index - 1 + numImages) % numImages];
+            image2.src = imagesList[(index + numImages) % numImages];
+            image2.alt = foodList[(index + numImages) % numImages];
+            image3.src = imagesList[(index + 1 + numImages) % numImages];
+            image3.alt = foodList[(index + 1 + numImages) % numImages];
         })
     });
 }
