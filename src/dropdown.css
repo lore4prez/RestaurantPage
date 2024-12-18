@@ -86,4 +86,11 @@
     opacity: 1;
 }
 
-/* Menu dropdown */
+@media only screen and (max-width: 768px) {
+    .dropdown {
+        /* min-width: 15em; */
+        position: absolute;
+        top: 31.5%;
+        /* margin: 2em; */
+    }
+}

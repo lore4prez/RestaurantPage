@@ -69,3 +69,24 @@
 .carousel-dot.active {
     background-color: #4b4747;
 }
+
+@media only screen and (max-width: 768px) {
+    .carousel-dot {
+        height: 8px;
+        width: 8px;
+    }
+
+    .image {
+        width: auto;
+        height: 150px;
+        border: 2px solid black;
+    }
+
+    .mini-container1 {
+        position: relative;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        height: 150px;
+    }
+}
