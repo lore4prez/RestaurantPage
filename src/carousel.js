@@ -20,18 +20,7 @@ import dessert1 from "./images/food-menu/desserts/brothers_special.png";
 import dessert2 from "./images/food-menu/desserts/shoko_shortcake.png";
 import dessert3 from "./images/food-menu/desserts/rika_truffles_ring.png";
 
-function makeMenuCarousel() {
-    const container = document.createElement("div");
-    const prevArrow = document.createElement("div");
-    const nextArrow = document.createElement("div");
-    const imagesDiv = document.createElement("div");
-
-    container.classList.add("carousel-container");
-    prevArrow.classList.add("prev-arrow");
-    nextArrow.classList.add("next-arrow");
-    imagesDiv.classList.add("images-container");
-
-    const foodList = 
+const foodList = 
     [
         "Sukuna's Cursed Pancakes", 
         "Megumi's Shikigami Waffles", 
@@ -48,10 +37,27 @@ function makeMenuCarousel() {
         "The Brothers: Jennifer Lawrence Jumbo Special", 
         "Shoko's Specialty: Healing Strawberry Shortcake", 
         "Rika's Love: Truffles Ring"
-    ]
-    const imagesList = [bdish1, bdish2, bdish3, ldish1, ldish2, ldish3, ddish1, ddish2, ddish3, drink1, drink2, drink3, dessert1, dessert2, dessert3];
+    ];
 
-    for (let i = 0; i < imagesList.length; i++) {
+const imagesList = [bdish1, bdish2, bdish3, ldish1, ldish2, ldish3, ddish1, ddish2, ddish3, drink1, drink2, drink3, dessert1, dessert2, dessert3];
+
+function makeMenuCarousel() {
+    const container = document.createElement("div");
+    const miniContainer1 = document.createElement("div");
+    const miniContainer2 = document.createElement("div");
+    const prevArrow = document.createElement("div");
+    const nextArrow = document.createElement("div");
+    const imagesDiv = document.createElement("div");
+
+    container.style.gridArea = "carousel";
+    container.classList.add("carousel-container");
+    miniContainer1.classList.add("mini-container1");
+    miniContainer2.classList.add("mini-container2");
+    prevArrow.classList.add("prev-arrow");
+    nextArrow.classList.add("next-arrow");
+    imagesDiv.classList.add("images-container");
+
+    for (let i = 0; i < 3; i++) {
         const tempImage = document.createElement("img");
         tempImage.classList.add("image");
         tempImage.src = imagesList[i];
@@ -59,11 +65,61 @@ function makeMenuCarousel() {
         imagesDiv.appendChild(tempImage);
     }
 
-    container.appendChild(prevArrow);
-    container.appendChild(imagesDiv);
-    container.appendChild(nextArrow);
+    miniContainer1.appendChild(prevArrow);
+    miniContainer1.appendChild(imagesDiv);
+    miniContainer1.appendChild(nextArrow);
+    container.appendChild(miniContainer1);
+
+    for (let i = 0; i < imagesList.length; i++) {
+        const dot = document.createElement("div");
+        dot.classList.add("carousel-dot");
+        miniContainer2.appendChild(dot);
+    }
+
+    container.appendChild(miniContainer2);
     
     return container;
 }
 
-export {makeMenuCarousel};
+function updateCarousel() {
+    const image1 = document.querySelector(".images-container > img:first-child");
+    const image2 = document.querySelector(".images-container > img:nth-child(2)");
+    const image3 = document.querySelector(".images-container > img:nth-child(3)");
+
+    const prevArrow = document.querySelector(".prev-arrow");
+    const nextArrow = document.querySelector(".next-arrow");
+
+    let index = 0;
+
+    nextArrow.addEventListener("click", () => {
+        index++;
+        image1.src = imagesList[index % imagesList.length];
+        image1.alt = foodList[index % imagesList.length];
+        image2.src = imagesList[(index + 1) % imagesList.length];
+        image2.alt = foodList[(index + 1) % imagesList.length];
+        image3.src = imagesList[(index + 2) % imagesList.length];
+        image3.alt = foodList[(index + 2) % imagesList.length];
+    });
+
+    prevArrow.addEventListener("click", () => {
+        index--;
+        image1.src = imagesList[(index + imagesList.length) % imagesList.length];
+        image1.alt = foodList[(index + imagesList.length) % imagesList.length];
+        image2.src = imagesList[(index - 1 + imagesList.length) % imagesList.length];
+        image2.alt = foodList[(index - 1 + imagesList.length) % imagesList.length];
+        image3.src = imagesList[(index - 2 + imagesList.length) % imagesList.length];
+        image3.alt = foodList[(index - 2 + imagesList.length) % imagesList.length];
+    });
+}
+
+function updateCarouselDot() {
+    const dotList = document.querySelectorAll(".carousel-dot");
+
+    dotList.forEach(dot => {
+        dot.addEventListener("click", () => {
+            
+        })
+    })
+}
+
+export {makeMenuCarousel, updateCarousel};

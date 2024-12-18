@@ -10,7 +10,10 @@ function addMenuHeader() {
     const carousel = makeMenuCarousel();
 
     contentDiv.classList.add("header");
+    contentDiv.classList.add("menu-header");
     contentHeader.textContent = "Menu";
+    contentHeader.style.gridArea = "miniheader";
+    dropdown.classList.add("dropdown");
     contentDiv.appendChild(contentHeader);
     contentDiv.appendChild(carousel);
     contentDiv.appendChild(dropdown);

@@ -1,6 +1,7 @@
 // import all css styles
 import "./styles.css";
 import "./dropdown.css";
+import "./carousel.css";
 
 // import from other js files
 import {content, addHomeHeader, addDescrip, addOpenHours, addLocation, addFooter} from "./home.js";
@@ -8,6 +9,7 @@ import {addMenuHeader, addBreakfastMenu, addLunchMenu, addDinnerMenu, addBeverag
 import {addAboutHeader, addContactInfo, addAboutContent} from "./about.js";
 import {filterMenuPage, dropdownEventListener} from "./dropdown.js";
 import {homeDisplay, menuDisplay, aboutDisplay} from "./reset-display.js";
+import {updateCarousel} from "./carousel.js";
 
 
 // import all images
@@ -94,6 +96,7 @@ function goToMenu() {
     filterMenuPage(dropdown);
     const allMenuContent = document.querySelectorAll(".menucontent");
     menuDisplay(content, allMenuContent);
+    updateCarousel();
     
 }
 

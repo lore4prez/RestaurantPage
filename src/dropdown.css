@@ -1,6 +1,7 @@
 .dropdown {
     /* min-width: 15em; */
-    position: relative;
+    position: absolute;
+    top: 46%;
     /* margin: 2em; */
 }
 

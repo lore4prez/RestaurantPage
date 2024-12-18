@@ -85,7 +85,7 @@ function filterMenuPage(dropdown) {
             if (option.textContent !== "Full Menu") {
                 const menucontent = findWhichMenuContent(option.textContent);
                 const activeMenu = document.querySelector("." + menucontent);
-                menupage.style.gridTemplateRows = "1fr 1fr 0.2fr";
+                menupage.style.gridTemplateRows = "0.2fr 1fr 0.2fr";
                 menupage.style.gridTemplateAreas = 
                 `
                 "header"
