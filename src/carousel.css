@@ -76,7 +76,7 @@
         width: 8px;
     }
 
-    .images-container > img:nth-child(2) {
+    .images-container > img:nth-child(1) {
         display: none;
     } 
     
