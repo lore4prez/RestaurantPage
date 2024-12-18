@@ -60,8 +60,9 @@ function makeMenuCarousel() {
     for (let i = 0; i < 3; i++) {
         const tempImage = document.createElement("img");
         tempImage.classList.add("image");
-        tempImage.src = imagesList[i];
-        tempImage.alt = foodList[i];
+        // Get the very last dish first then the next two 
+        tempImage.src = imagesList[(i - 1 + imagesList.length) % imagesList.length];
+        tempImage.alt = foodList[(i - 1 + imagesList.length) % imagesList.length];
         imagesDiv.appendChild(tempImage);
     }
 
@@ -73,6 +74,7 @@ function makeMenuCarousel() {
     for (let i = 0; i < imagesList.length; i++) {
         const dot = document.createElement("div");
         dot.classList.add("carousel-dot");
+        dot.setAttribute("index", i);
         miniContainer2.appendChild(dot);
     }
 
@@ -80,6 +82,8 @@ function makeMenuCarousel() {
     
     return container;
 }
+
+
 
 function updateCarousel() {
     const image1 = document.querySelector(".images-container > img:first-child");
@@ -89,37 +93,64 @@ function updateCarousel() {
     const prevArrow = document.querySelector(".prev-arrow");
     const nextArrow = document.querySelector(".next-arrow");
 
+    const dotList = document.querySelectorAll(".carousel-dot");
+    dotList[0].classList.add("active");
+
     let index = 0;
 
-    nextArrow.addEventListener("click", () => {
-        index++;
-        image1.src = imagesList[index % imagesList.length];
-        image1.alt = foodList[index % imagesList.length];
-        image2.src = imagesList[(index + 1) % imagesList.length];
-        image2.alt = foodList[(index + 1) % imagesList.length];
-        image3.src = imagesList[(index + 2) % imagesList.length];
-        image3.alt = foodList[(index + 2) % imagesList.length];
-    });
+    function goNextSlide() {
+        index = (index + 1) % imagesList.length; // So index doesnt go too far out of bounds
+    
+        image1.src = imagesList[(index - 1 + imagesList.length) % imagesList.length];
+        image1.alt = foodList[(index - 1 + imagesList.length) % imagesList.length];
+        image2.src = imagesList[(index + imagesList.length) % imagesList.length];
+        image2.alt = foodList[(index + imagesList.length) % imagesList.length];
+        image3.src = imagesList[(index + 1 + imagesList.length) % imagesList.length];
+        image3.alt = foodList[(index + 1 + imagesList.length) % imagesList.length];
+        
+        dotList.forEach(item => {
+            item.classList.remove("active")
+        });
+        dotList[index % imagesList.length].classList.add("active");
+    }
+
+    setInterval(goNextSlide, 3000);
+
+    nextArrow.addEventListener("click", goNextSlide);
 
     prevArrow.addEventListener("click", () => {
-        index--;
-        image1.src = imagesList[(index + imagesList.length) % imagesList.length];
-        image1.alt = foodList[(index + imagesList.length) % imagesList.length];
-        image2.src = imagesList[(index - 1 + imagesList.length) % imagesList.length];
-        image2.alt = foodList[(index - 1 + imagesList.length) % imagesList.length];
-        image3.src = imagesList[(index - 2 + imagesList.length) % imagesList.length];
-        image3.alt = foodList[(index - 2 + imagesList.length) % imagesList.length];
-    });
-}
+        index = (index - 1 + imagesList.length) % imagesList.length; // So index doesnt go too far out of bounds
 
-function updateCarouselDot() {
-    const dotList = document.querySelectorAll(".carousel-dot");
+        image1.src = imagesList[(index - 1 + imagesList.length) % imagesList.length];
+        image1.alt = foodList[(index - 1 + imagesList.length) % imagesList.length];
+        image2.src = imagesList[(index + imagesList.length) % imagesList.length];
+        image2.alt = foodList[(index + imagesList.length) % imagesList.length];
+        image3.src = imagesList[(index + 1 + imagesList.length) % imagesList.length];
+        image3.alt = foodList[(index + 1 + imagesList.length) % imagesList.length];
+        
+        dotList.forEach(item => {
+            item.classList.remove("active")
+        });
+        dotList[(index + imagesList.length) % imagesList.length].classList.add("active");
+    
+    });
 
     dotList.forEach(dot => {
         dot.addEventListener("click", () => {
-            
+            index = parseInt(dot.getAttribute("index"));
+            dotList.forEach(item => {
+                item.classList.remove("active")
+            });
+            dotList[index].classList.add("active");
+
+            image1.src = imagesList[index % imagesList.length];
+            image1.alt = foodList[index % imagesList.length];
+            image2.src = imagesList[(index + 1) % imagesList.length];
+            image2.alt = foodList[(index + 1) % imagesList.length];
+            image3.src = imagesList[(index + 2) % imagesList.length];
+            image3.alt = foodList[(index + 2) % imagesList.length];
         })
-    })
+    });
 }
 
 export {makeMenuCarousel, updateCarousel};

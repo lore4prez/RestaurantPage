@@ -58,6 +58,6 @@
 }
 
 /* Highlighted dot */
-.dot.active {
-    background-color: #717171;
+.carousel-dot.active {
+    background-color: #4b4747;
 }
