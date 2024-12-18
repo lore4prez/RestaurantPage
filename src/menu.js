@@ -1,16 +1,18 @@
 import {content} from "./home.js";
 import {addDropDown} from "./dropdown.js";
-
+import {makeMenuCarousel} from "./carousel.js";
 
 // To make a label for the page (menu in this case)
 function addMenuHeader() {
     const contentDiv = document.createElement("div");
     const contentHeader = document.createElement("h1");
     const dropdown = addDropDown();
+    const carousel = makeMenuCarousel();
 
     contentDiv.classList.add("header");
     contentHeader.textContent = "Menu";
     contentDiv.appendChild(contentHeader);
+    contentDiv.appendChild(carousel);
     contentDiv.appendChild(dropdown);
 
     content.appendChild(contentDiv);
