@@ -55,6 +55,11 @@ nav {
     font-size: 1.2rem;
     border-radius: var(--main-radius);
     background-color: antiquewhite;
+    cursor: pointer;
+}
+
+.home:hover, .menu:hover, .about:hover {
+    background-color: rgb(199, 184, 165);
 }
 
 #content {

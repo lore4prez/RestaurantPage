@@ -34,6 +34,14 @@
     cursor: pointer;
 }
 
+.prev-arrow:hover {
+    border-right: 20px solid rgb(211, 198, 181);
+}
+
+.next-arrow:hover {
+    border-left: 20px solid rgb(216, 202, 184);
+}
+
 .prev-arrow {
     border-right: 20px solid antiquewhite;
 }
